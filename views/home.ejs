@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroURL</title>
+    
+</head>
+<body>
+    <style>
+        h1,h3{
+            color: rgb(0, 19, 60);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .error{
+            color: red; 
+            font-weight: bold;
+        }
+    </style>
+    <div class="container">
+        <h1>MicroURL </h1>
+        <form action="/" method="POST">
+            <h3>Shorten</h3>
+            <label for="longURL">Long URL :</label>
+            <input id="longURL" name="long" type="text" placeholder="Enter URL to shorten">
+            <button type="submit">SUBMIT</button>
+        </form>
+        <form action="/analytics" method="GET">
+            <h3>Analytics</h3>
+            <label for="shortURL">Short URL :</label>
+            <input id="shortURL" name="short" type="text" placeholder="Enter ID to get analytics">
+            <button type="submit">SUBMIT</button>
+        </form>
+        <% if (error) { %>
+            <div class="error">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if (short) { %>
+            <div class="short">
+                <label for="short">Short URL :</label>
+                <span id = "short">localhost:8081/<%=short%></span>
+            </div>
+        <% } %>
+        <% if (clickCount) { %>
+            <div class="cc">
+                <label for="cc">clickCount :</label>
+                <span id = "cc"><%=clickCount%></span>
+            </div>
+        <% } %>
+    </div>
+    
+    
+</body>
+</html>
