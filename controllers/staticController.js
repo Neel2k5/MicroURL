@@ -36,14 +36,14 @@ async function handlestaticPOST(req, res) {
 
     try {
         await urlModel.create({
-            short,
-            long,
+            short:short,
+            long:long,
             clickCount: 1,
         });
 
         return res.status(201).render("home", {
             error: null,
-            short,
+            short:short,
             clickCount: null
         });
 

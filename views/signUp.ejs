@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroURL | signUp</title>
+    
+</head>
+<body>
+    <style>
+        h1,h3{
+            color: rgb(0, 19, 60);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 25px;
+        }
+       
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap:20px;
+            flex-direction: column;
+        }
+        .error{
+            color: red; 
+            font-weight: bold;
+        }
+    </style>
+    <div class="container">
+        <h1>MicroURL </h1>
+        <form  action="/auth/signup" method="POST">
+            <h3>SignUP</h3>
+            <div>
+            <label for="uname">User Name :</label>
+            <input id="uname" name="userName" type="text" placeholder="Enter User name">
+            </div>
+            <div>
+            <label for="email">Email :</label>
+            <input id="email" name="eMail" type="text" placeholder="Enter Email">
+            </div>
+            <div>
+            <label for="pwd">Password :</label>
+            <input id="pwd" name="password" type="text" placeholder="Create A Password">
+            </div>
+            <button type="submit">SUBMIT</button>
+        </form>
+        
+        
+        <% if (error) { %>
+            <div class="error">
+                <%= error %>
+            </div>
+        <% } %>
+        
+    </div>
+    
+    
+</body>
+</html>

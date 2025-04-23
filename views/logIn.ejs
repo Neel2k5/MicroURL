@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroURL | LogIn</title>
+    
+</head>
+<body>
+    <style>
+        h1,h3{
+            color: rgb(0, 19, 60);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .error{
+            color: red; 
+            font-weight: bold;
+        }
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap:20px;
+            flex-direction: column;
+        }
+        .msg{
+            color: rgb(43, 255, 0); 
+            font-weight: bold;
+        }
+    </style>
+    <div class="container">
+        <h1>MicroURL </h1>
+        <form action="/auth/login" method="POST">
+            <h3>LogIn</h3>
+            <div>
+            <label for="uname">User Name :</label>
+            <input id="uname" name="userName" type="text" placeholder="Enter User name">
+            </div>
+            <div>
+            <label for="email">Email :</label>
+            <input id="email" name="eMail" type="text" placeholder="Enter Email">
+            </div>
+            <div>
+            <label for="pwd">Password :</label>
+            <input id="pwd" name="password" type="text" placeholder="Enter Password">
+            </div>
+            <button type="submit">SUBMIT</button>
+        </form>
+        
+        <% if (message) { %>
+            <div class="msg">
+                <%= message %>
+            </div>
+        <% } %>
+        <% if (error) { %>
+            <div class="error">
+                <%= error %>
+            </div>
+        <% } %>
+        
+    </div>
+    
+    
+</body>
+</html>
